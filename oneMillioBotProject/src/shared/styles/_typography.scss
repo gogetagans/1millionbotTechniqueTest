@@ -1,0 +1,228 @@
+// Typography system - [BOOTSTRAP THEMING]
+
+// Declared font families.
+$main-font-family: "SF UI Text Regular";
+$secondary-font-family-bold: "Poppins-bold";
+$secondary-font-family-regular: "Poppins-regular";
+$secondary-font-family-light: "Poppins-light";
+$tertiary-font-family: "Montserrat";
+
+// Typography map of the different font types.
+$typographys: (
+  ui: (
+    xl: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 24px,
+      line-height: 32px,
+    ),
+    lg: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 500,
+      font-size: 20px,
+      line-height: 32px,
+    ),
+    md: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 500,
+      font-size: 16px,
+      line-height: 32px,
+    ),
+    sm: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 14px,
+      line-height: 16px,
+    ),
+    xs: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 12px,
+      line-height: 16px,
+      letter-spacing: 0.01em,
+    ),
+    xs-caps: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 12px,
+      line-height: 16px,
+      letter-spacing: 0.15em,
+      text-transform: uppercase,
+    ),
+    xxs: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 9px,
+      line-height: 16px,
+      letter-spacing: 0.05em,
+    ),
+    xxs-caps: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 600,
+      font-size: 9px,
+      line-height: 16px,
+      letter-spacing: 0.15em,
+      text-transform: uppercase,
+    ),
+  ),
+  ui-bold: (
+    xl: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 24px,
+      line-height: 32px,
+    ),
+    lg: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 20px,
+      line-height: 32px,
+    ),
+    md: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 16px,
+      line-height: 32px,
+    ),
+    sm: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 600,
+      font-size: 14px,
+      line-height: 16px,
+      letter-spacing: 0.01em,
+    ),
+    xs: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 600,
+      font-size: 12px,
+      line-height: 16px,
+      letter-spacing: 0.01em,
+    ),
+    xs-caps: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 12px,
+      line-height: 16px,
+      letter-spacing: 0.12em,
+      text-transform: uppercase,
+    ),
+    xxs: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: 600,
+      font-size: 9px,
+      line-height: 16px,
+      letter-spacing: 0.05em,
+    ),
+    xxs-caps: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 9px,
+      line-height: 16px,
+      letter-spacing: 0.15em,
+      text-transform: uppercase,
+    ),
+  ),
+  body: (
+    lg: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 28px,
+      line-height: 40px,
+      letter-spacing: -0.01em,
+    ),
+    md: (
+      ont-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 20px,
+      line-height: 32px,
+    ),
+    sm: (
+      font-family: $main-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 14px,
+      line-height: 24px,
+    ),
+  ),
+  display: (
+    d1: (
+      font-family: $secondary-font-family-bold,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 64px,
+      line-height: 80px,
+      letter-spacing: 0.01em,
+    ),
+    d2: (
+      font-family: $tertiary-font-family,
+      font-style: normal,
+      font-weight: bold,
+      font-size: 56px,
+      line-height: 72px,
+      letter-spacing: -1.5px,
+    ),
+    d3: (
+      font-family: $tertiary-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 40px,
+      line-height: 56px,
+      letter-spacing: -0.01em,
+    ),
+    d4: (
+      font-family: $tertiary-font-family,
+      font-style: normal,
+      font-weight: normal,
+      font-size: 24px,
+      line-height: 32px,
+      letter-spacing: -0.01em,
+    ),
+  ),
+);
+
+// Mixin that uses the declared types and syzes of the map to return the desired typography style.
+@mixin typ($type, $size: md) {
+  @if $type == "display" and $size == "md" {
+    $size: d3;
+  }
+  font-family: map-get(
+    map-get(map-get($typographys, $type), $size),
+    font-family
+  );
+  font-style: map-get(map-get(map-get($typographys, $type), $size), font-style);
+  font-weight: map-get(
+    map-get(map-get($typographys, $type), $size),
+    font-weight
+  );
+  font-size: map-get(map-get(map-get($typographys, $type), $size), font-size);
+  line-height: map-get(
+    map-get(map-get($typographys, $type), $size),
+    line-height
+  );
+  letter-spacing: map-get(
+    map-get(map-get($typographys, $type), $size),
+    letter-spacing
+  );
+  text-transform: map-get(
+    map-get(map-get($typographys, $type), $size),
+    text-transform
+  );
+}

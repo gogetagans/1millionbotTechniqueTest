@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../../assets/fonts/poppins/poppins-bold-webfont.eot");
+  src: url("../../assets/fonts/poppins/poppins-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/poppins/poppins-bold-webfont.woff2") format("woff2"),
+    url("../../assets/fonts/poppins/poppins-bold-webfont.woff") format("woff"),
+    url("../../assets/fonts/poppins/poppins-bold-webfont.ttf")
+      format("truetype"),
+    url("../../assets/fonts/poppins/poppins-bold-webfont.svg#poppinsbold")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-light";
+  src: url("../../assets/fonts/poppins/poppins-light-webfont.eot");
+  src: url("../../assets/fonts/poppins/poppins-light-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/poppins/poppins-light-webfont.woff2")
+      format("woff2"),
+    url("../../assets/fonts/poppins/poppins-light-webfont.woff") format("woff"),
+    url("../../assets/fonts/poppins/poppins-light-webfont.ttf")
+      format("truetype"),
+    url("../../assets/fonts/poppins/poppins-light-webfont.svg#poppinslight")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-regular";
+  src: url("../../assets/fonts/poppins/poppins-regular-webfont.eot");
+  src: url("../../assets/fonts/poppins/poppins-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/poppins/poppins-regular-webfont.woff2")
+      format("woff2"),
+    url("../../assets/fonts/poppins/poppins-regular-webfont.woff")
+      format("woff"),
+    url("../../assets/fonts/poppins/poppins-regular-webfont.ttf")
+      format("truetype"),
+    url("../../assets/fonts/poppins/poppins-regular-webfont.svg#poppinsregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/montserrat-v14-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../../assets/fonts/montserrat-v14-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../../assets/fonts/montserrat-v14-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../../assets/fonts/montserrat-v14-latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("../../assets/fonts/montserrat-v14-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../../assets/fonts/montserrat-v14-latin-regular.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "SF UI Text Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Regular"),
+    url("../../assets/fonts/SFUIText-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Italic"),
+    url("../../assets/fonts/SFUIText-RegularItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Light"),
+    url("../../assets/fonts/SFUIText-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Light Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Light Italic"),
+    url("../../assets/fonts/SFUIText-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Medium"),
+    url("../../assets/fonts/SFUIText-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Medium Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Medium Italic"),
+    url("../../assets/fonts/SFUIText-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Semibold"),
+    url("../../assets/fonts/SFUIText-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Semibold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Semibold Italic"),
+    url("../../assets/fonts/SFUIText-SemiboldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Bold"),
+    url("../../assets/fonts/SFUIText-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Bold Italic"),
+    url("../../assets/fonts/SFUIText-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Heavy"),
+    url("../../assets/fonts/SFUIText-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text Heavy Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Text Heavy Italic"),
+    url("../../assets/fonts/SFUIText-HeavyItalic.woff") format("woff");
+}

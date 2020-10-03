@@ -1,0 +1,169 @@
+// Main App Colors
+$primary: #252b40;
+$secondary: #e5e6e8;
+$tertiary: transparent;
+
+$white: #ffffff;
+$black: #000;
+$blue-bg: #e0e4ee;
+$grey-border: #68746e;
+$grey-main-bg: #e1e2e3;
+$grey-readonly: rgba(0, 0, 0, 0.12);
+$color-UI: #393c5b;
+
+// Color system - [BOOTSTRAP THEMING]
+$page-bg: linear-gradient(0deg, #e0e4ee, #e0e4ee),
+  linear-gradient(0deg, #e0ddda, #e0ddda), #e1e2e3;
+
+// Gray color values
+$white: #fff !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$black: #000 !default;
+
+// Transparent values
+$white: #fff !default;
+$transparent-100: rgba(255, 255, 255, 0.9);
+$transparent-200: rgba(255, 255, 255, 0.8);
+$transparent-300: rgba(255, 255, 255, 0.7);
+$transparent-400: rgba(255, 255, 255, 0.6);
+$transparent-500: rgba(255, 255, 255, 0.5);
+$transparent-600: rgba(255, 255, 255, 0.4);
+$transparent-700: rgba(255, 255, 255, 0.3);
+$transparent-800: rgba(255, 255, 255, 0.2);
+$black: #000 !default;
+
+// Default color values
+$gray: $gray-500;
+$transparent: $transparent-500;
+$ui: #393c5b;
+$purple: #484e84;
+$red: #844876;
+$green: #21caa1;
+$yellow: #ddb771;
+$blue: #4d64db;
+
+// Darken colours percentage
+$d3: 60%;
+$d2: 40%;
+$d1: 20%;
+
+// Lighten colours percentage
+$l1: 20%;
+$l2: 40%;
+$l3: 60%;
+
+// Function used to light up the colors
+@function tint-color($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Function used to darken up the colors
+@function shade-color($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Map of colors
+$color-map: (
+  gray: (
+    d3: $gray-800,
+    d2: $gray-700,
+    d1: $gray-600,
+    x: $gray-500,
+    l1: $gray-400,
+    l2: $gray-300,
+    l3: $gray-200,
+  ),
+  transparent: (
+    d3: $transparent-800,
+    d2: $transparent-700,
+    d1: $transparent-600,
+    x: $transparent-500,
+    l1: $transparent-400,
+    l2: $transparent-300,
+    l3: $transparent-200,
+  ),
+  ui: (
+    d3: shade-color($ui, $d3),
+    d2: shade-color($ui, $d2),
+    d1: shade-color($ui, $d1),
+    x: $ui,
+    l1: tint-color($ui, $l1),
+    l2: tint-color($ui, $l2),
+    l3: tint-color($ui, $l3),
+  ),
+  a-purple: (
+    d3: shade-color($purple, $d3),
+    d2: shade-color($purple, $d2),
+    d1: shade-color($purple, $d1),
+    x: $purple,
+    l1: tint-color($purple, $l1),
+    l2: tint-color($purple, $l2),
+    l3: tint-color($purple, $l3),
+  ),
+  b-red: (
+    d3: shade-color($red, $d3),
+    d2: shade-color($red, $d2),
+    d1: shade-color($red, $d1),
+    x: $red,
+    l1: tint-color($red, $l1),
+    l2: tint-color($red, $l2),
+    l3: tint-color($red, $l3),
+  ),
+  c-green: (
+    d3: shade-color($green, $d3),
+    d2: shade-color($green, $d2),
+    d1: shade-color($green, $d1),
+    x: $green,
+    l1: tint-color($green, $l1),
+    l2: tint-color($green, $l2),
+    l3: tint-color($green, $l3),
+  ),
+  d-yellow: (
+    d3: shade-color($yellow, $d3),
+    d2: shade-color($yellow, $d2),
+    d1: shade-color($yellow, $d1),
+    x: $yellow,
+    l1: tint-color($yellow, $l1),
+    l2: tint-color($yellow, $l2),
+    l3: tint-color($yellow, $l3),
+  ),
+  e-blue: (
+    d3: shade-color($blue, $d3),
+    d2: shade-color($blue, $d2),
+    d1: shade-color($blue, $d1),
+    x: $blue,
+    l1: tint-color($blue, $l1),
+    l2: tint-color($blue, $l2),
+    l3: tint-color($blue, $l3),
+  ),
+  app-background: (
+    primary: #fcfcfc,
+    secondary: #f3f3f3,
+  ),
+  branding: (
+    primary: #850599,
+    primary-transparent: rgba(133, 5, 153, 0.04),
+    secondary: #99900c,
+    tertiary: #380c99,
+    transparent: rgba(0, 0, 0, 0.08),
+  ),
+  highlight: (
+    primary: #1283fc,
+    secondary: #599914,
+    secondary-transparent: rgb(89, 153, 20, 0.08),
+    tertiary: #991414,
+    thertiary-transparent: rgb(153, 20, 20, 0.08),
+  ),
+);
+
+// Function used to return a color based on the previously created map
+@function clr($base, $shade: x) {
+  $color: map-get(map-get($color-map, $base), $shade);
+  @return $color;
+}
