@@ -4,13 +4,15 @@
   display: flex;
   flex-direction: column;
   background-color: $white;
+
   &__header {
-    height: 100px;
-    background-color: $red;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    height: 100px;
+    background-color: $red;
+
     &--collapseOption,
     &--avatar,
     &--text,
@@ -22,12 +24,14 @@
       color: $white;
       @include typ(ui, xl);
     }
+
     &--collapseOption {
       width: 10%;
       text-align: center;
       margin-top: 25px;
       cursor: pointer;
     }
+
     &--avatar {
       width: 15%;
       .avatar {
@@ -38,9 +42,11 @@
         text-align: center;
       }
     }
+
     &--text {
       width: 60%;
     }
+
     &--hamburguer {
       width: 10%;
       text-align: center;
@@ -48,6 +54,7 @@
       cursor: pointer;
     }
   }
+
   &__body {
     display: flex;
     flex-direction: column;
@@ -56,6 +63,28 @@
     background-color: $white;
     overflow-y: scroll;
   }
+
+  &__chips {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    margin: 10px 0;
+    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
+
+    &--text-info {
+      color: $black;
+      padding: 2px 5px;
+      @include typ(ui, sm);
+    }
+
+    &--buttons {
+      display: flex;
+      flex-direction: row;
+      overflow-x: hidden;
+    }
+  }
+
   &__actions {
     display: flex;
     flex-direction: row;
@@ -63,6 +92,7 @@
     align-content: center;
     height: 60px;
     background-color: $white;
+
     &--input {
       display: flex;
       flex-direction: row;
@@ -72,37 +102,39 @@
       padding: 0 20px;
 
       input[type="text"] {
+        width: 100%;
         border: 1px solid $gray-500;
         border-radius: 4px;
-        width: 100%;
-        @include typ(ui, md);
         text-align: left;
         padding-left: 10px;
         color: $gray-700;
+        @include typ(ui, md);
       }
     }
+
     &--button {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-content: center;
+      width: 20%;
       padding: 12px 0;
       margin: 0 15px;
-      width: 20%;
       color: $white;
       text-align: center;
       background-color: $red;
       border-radius: 30px;
-      @include typ(ui, xl);
       cursor: pointer;
+      @include typ(ui, xl);
     }
   }
+
   &__footer {
-    height: 40px;
-    background-color: $white;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 40px;
+    background-color: $white;
     @include typ(ui, sm);
   }
 }

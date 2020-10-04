@@ -1,0 +1,19 @@
+@import "../styles/sass-helpers.scss";
+
+.chat__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  background-color: $gray-400;
+  border-radius: 30px;
+  padding: 10px 35px;
+  margin: 8px;
+  white-space: nowrap;
+  text-align: center;
+  p {
+    color: $black;
+    margin: 0;
+    @include typ(ui, xl);
+  }
+}
