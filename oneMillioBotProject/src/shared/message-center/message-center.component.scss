@@ -7,6 +7,46 @@
   &__header {
     height: 100px;
     background-color: $red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    &--collapseOption,
+    &--avatar,
+    &--text,
+    &--hamburguer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      color: $white;
+      @include typ(ui, xl);
+    }
+    &--collapseOption {
+      width: 10%;
+      text-align: center;
+      margin-top: 25px;
+      cursor: pointer;
+    }
+    &--avatar {
+      width: 15%;
+      .avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: $white;
+        text-align: center;
+      }
+    }
+    &--text {
+      width: 60%;
+    }
+    &--hamburguer {
+      width: 10%;
+      text-align: center;
+      @include typ(ui, xl);
+      cursor: pointer;
+    }
   }
   &__body {
     display: flex;
@@ -22,7 +62,11 @@
   }
   &__footer {
     height: 40px;
-    background-color: $blue;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include typ(ui, sm);
   }
 }
 

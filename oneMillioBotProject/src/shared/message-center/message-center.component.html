@@ -1,6 +1,17 @@
 <div class="message__center">
-  <section class="message__center__header"></section>
-  <section class="message__center__body">
+  <section class="message__center__header">
+    <div class="message__center__header--collapseOption">
+      <fa-icon [icon]="faMinus"></fa-icon>
+    </div>
+    <div class="message__center__header--avatar">
+      <div class="avatar"></div>
+    </div>
+    <div class="message__center__header--text">{{ botName }}</div>
+    <div class="message__center__header--hamburguer">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+  </section>
+  <section #scrollMe class="message__center__body">
     <omb-message [userFrom]="1" [class]="setStyleByUserFrom(1)">
       <div content>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
@@ -36,5 +47,7 @@
     </omb-message>
   </section>
   <section class="message__center__actions"></section>
-  <section class="message__center__footer"></section>
+  <section class="message__center__footer">
+    <p>{{ footer_text }}</p>
+  </section>
 </div>
