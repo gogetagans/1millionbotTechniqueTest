@@ -1,5 +1,8 @@
+@import "../shared/styles/sass-helpers.scss";
+
 .app__container {
   position: relative;
+  background-color: $purple;
   .toolbar {
     top: 0;
     left: 0;

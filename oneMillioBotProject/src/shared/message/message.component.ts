@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MESSAGE_FROM } from 'src/app/enums/messageType.enum';
+import { MESSAGE_FROM } from 'src/app/enums/messageFromType.enum';
 
 @Component({
   selector: 'omb-message',

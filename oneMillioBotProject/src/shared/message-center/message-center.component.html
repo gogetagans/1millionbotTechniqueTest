@@ -12,37 +12,13 @@
     </div>
   </section>
   <section #scrollMe class="message__center__body">
-    <omb-message [userFrom]="1" [class]="setStyleByUserFrom(1)">
+    <omb-message
+      *ngFor="let message of messages"
+      [userFrom]="message.userFrom"
+      [class]="setStyleByUserFrom(message.userFrom)"
+    >
       <div content>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-        fugiat architecto dignissimos sed iusto praesentium harum quis
-        voluptatum beatae, debitis assumenda, similique repellat quasi.
-      </div>
-    </omb-message>
-    <omb-message [userFrom]="2" [class]="setStyleByUserFrom(2)">
-      <div content>Lorem ipsum dolor, sit amet consectetur</div>
-    </omb-message>
-    <omb-message [userFrom]="1" [class]="setStyleByUserFrom(1)">
-      <div content>Lorem ipsum dolor, sit amet consectetur</div>
-    </omb-message>
-    <omb-message [userFrom]="2" [class]="setStyleByUserFrom(2)">
-      <div content>Lorem ipsum dolor, sit amet consectetur</div>
-    </omb-message>
-    <omb-message [userFrom]="1" [class]="setStyleByUserFrom(1)">
-      <div content>Lorem ipsum dolor, sit amet consectetur</div>
-    </omb-message>
-    <omb-message [userFrom]="2" [class]="setStyleByUserFrom(2)">
-      <div content>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-        fugiat architecto dignissimos sed iusto praesentium harum quis
-        voluptatum beatae, debitis assumenda, similique repellat quasi.
-      </div>
-    </omb-message>
-    <omb-message [userFrom]="1" [class]="setStyleByUserFrom(1)">
-      <div content>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-        fugiat architecto dignissimos sed iusto praesentium harum quis
-        voluptatum beatae, debitis assumenda, similique repellat quasi.
+        {{ message.content.text }}
       </div>
     </omb-message>
   </section>
@@ -51,8 +27,14 @@
       <p>Estas son algunas de las cosas que me puedes preguntar</p>
     </div>
     <div class="message__center__chips--buttons">
-      <omb-chat-button textContent="Qué es un chatbot"></omb-chat-button>
-      <omb-chat-button textContent="Para qué sirve"></omb-chat-button>
+      <omb-chat-button
+        textContent="Qué es un chatbot"
+        (emitter)="getTextEmitted($event)"
+      ></omb-chat-button>
+      <omb-chat-button
+        textContent="Para qué sirve"
+        (emitter)="getTextEmitted($event)"
+      ></omb-chat-button>
     </div>
   </section>
   <section class="message__center__actions">
@@ -66,6 +48,6 @@
     </div>
   </section>
   <section class="message__center__footer">
-    <p>{{ footer_text }}</p>
+    <p>{{ footerText }}</p>
   </section>
 </div>
