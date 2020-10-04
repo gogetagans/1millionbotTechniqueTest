@@ -46,7 +46,16 @@
       </div>
     </omb-message>
   </section>
-  <section class="message__center__actions"></section>
+  <section class="message__center__actions">
+    <div class="message__center__actions--input">
+      <input type="text" placeholder="Escribe tu pregunta" />
+    </div>
+    <div class="message__center__actions--button">
+      <div class="sendButton">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </div>
+    </div>
+  </section>
   <section class="message__center__footer">
     <p>{{ footer_text }}</p>
   </section>

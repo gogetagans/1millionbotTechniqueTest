@@ -7,7 +7,11 @@ import {
 } from '@angular/core';
 import { MESSAGE_FROM } from 'src/app/enums/messageType.enum';
 
-import { faBars, faMinus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faMinus,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'omb-message-center',
@@ -20,6 +24,7 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
   public botName = 'Bill';
   public faBars = faBars;
   public faMinus = faMinus;
+  public faChevronRight = faChevronRight;
 
   constructor() {}
 
