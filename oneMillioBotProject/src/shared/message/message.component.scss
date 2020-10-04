@@ -3,9 +3,10 @@
 .message__content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px;
+  margin: 10px;
   @include typ(ui, md);
 
   &--bot {
