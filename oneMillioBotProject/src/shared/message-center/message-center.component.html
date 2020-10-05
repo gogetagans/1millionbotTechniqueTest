@@ -1,13 +1,17 @@
-<div class="message__center">
+<div class="message__center" [@collapse]="collapsed ? true : false">
   <section class="message__center__header">
     <div class="message__center__header--collapseOption">
-      <fa-icon [icon]="faMinus"></fa-icon>
+      <fa-icon [icon]="faMinus" (click)="collapseMenu()"></fa-icon>
     </div>
     <div class="message__center__header--avatar">
       <div class="avatar"></div>
     </div>
     <div class="message__center__header--text">{{ botName }}</div>
-    <div class="message__center__header--hamburguer">
+    <div
+      class="message__center__header--hamburguer"
+      (click)="openMenu()"
+      (clickOutside)="onClickedOutside($event)"
+    >
       <fa-icon [icon]="faBars"></fa-icon>
     </div>
   </section>
@@ -40,17 +44,36 @@
       ></omb-chat-button>
     </div>
   </section>
-  <section class="message__center__actions">
-    <div class="message__center__actions--input">
-      <input type="text" placeholder="Escribe tu pregunta" />
-    </div>
-    <div class="message__center__actions--button">
-      <div class="sendButton">
-        <fa-icon [icon]="faChevronRight"></fa-icon>
+
+  <form [formGroup]="messageForm" (keydown)="keyDownFunction($event)">
+    <section class="message__center__actions">
+      <div class="message__center__actions--input">
+        <input
+          type="text"
+          placeholder="Escribe tu pregunta"
+          formControlName="sendText"
+        />
       </div>
-    </div>
-  </section>
+      <div class="message__center__actions--button">
+        <div class="sendButton" (click)="onSubmit()">
+          <fa-icon [icon]="faChevronRight"></fa-icon>
+        </div>
+      </div>
+    </section>
+  </form>
+
   <section class="message__center__footer">
     <p>{{ footerText }}</p>
   </section>
+  <div class="message__menu" [@openClose]="opened ? true : false">
+    <div class="message__menu--item">
+      <p>Política de privacidad</p>
+    </div>
+    <div class="message__menu--item">
+      <p>Seleccionar Idioma</p>
+    </div>
+    <div class="message__menu--item">
+      <p>Olvidar mis datos</p>
+    </div>
+  </div>
 </div>

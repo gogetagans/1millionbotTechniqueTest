@@ -12,6 +12,7 @@ import { IText } from 'src/app/models/text.model';
 })
 export class ChatButtonComponent {
   @Input() textContent: IMessage<IText>;
+
   @Output() emitter = new EventEmitter<IMessage<IText>>();
 
   constructor() {}

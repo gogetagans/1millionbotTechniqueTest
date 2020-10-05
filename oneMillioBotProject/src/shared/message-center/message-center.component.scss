@@ -1,6 +1,7 @@
 @import "../styles/sass-helpers.scss";
 
 .message__center {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: $white;
@@ -138,6 +139,34 @@
     height: 40px;
     background-color: $white;
     @include typ(ui, sm);
+  }
+}
+
+.message__menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  right: 0;
+  height: auto;
+  width: 260px;
+  top: 100px;
+  background-color: $white;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.26),
+    0px 14px 28px rgba(0, 0, 0, 0.25);
+
+  &--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    @include typ(ui, md);
+  }
+  &--item:hover {
+    background-color: $gray-500;
+    color: white;
   }
 }
 
