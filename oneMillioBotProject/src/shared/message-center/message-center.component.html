@@ -31,9 +31,12 @@
   </section>
   <section class="message__center__chips">
     <div class="message__center__chips--text-info">
+      <div class="arrow__button" (click)="onClickArrowButton()">
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+      </div>
       <p>Estas son algunas de las cosas que me puedes preguntar</p>
     </div>
-    <div class="message__center__chips--buttons">
+    <div class="message__center__chips--buttons" [style.marginLeft.px]="pixels">
       <omb-chat-button
         textContent="Qué es un chatbot"
         (emitter)="getTextEmitted($event)"

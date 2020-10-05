@@ -19,6 +19,7 @@ import {
   faMinus,
   faChevronRight,
   IconDefinition,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { MESSAGE_FROM } from 'src/app/enums/messageFromType.enum';
 import { MESSAGE_TYPE } from 'src/app/enums/messageType.enum';
@@ -48,12 +49,14 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
   public faBars: IconDefinition = faBars;
   public faMinus: IconDefinition = faMinus;
   public faChevronRight: IconDefinition = faChevronRight;
+  public faArrowRight: IconDefinition = faArrowRight;
   public footerText = 'by 1millionbot';
   public botName = 'Bill';
-  public opened: boolean = false;
-  public collapsed: boolean = false;
+  public opened = false;
+  public collapsed = false;
   public messages = new Array<IMessage<any>>();
   public images = new Array<ICarouselImage>();
+  public pixels = 0;
   public messageForm = new FormGroup({
     sendText: new FormControl(''),
   });
@@ -84,11 +87,19 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
   };
 
   public onClickedOutside = (event) => {
-    if (this.collapsed && this.opened) this.opened = false;
+    if (this.collapsed && this.opened) {
+      this.opened = false;
+    }
+  };
+
+  public onClickArrowButton = () => {
+    this.pixels = this.pixels - 100;
+    console.log('Pixels', this.pixels);
   };
 
   public onSubmit = () => {
-    const msg = this.messageForm.controls['sendText'].value;
+    const formControlName = 'sendText';
+    const msg = this.messageForm.controls[formControlName].value;
     if (msg) {
       const content: IText = { text: msg };
       const newMessage: IMessage<IText> = {
@@ -97,12 +108,14 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
         content: { ...content },
       };
       this.messages = [...this.messages, newMessage];
-      this.messageForm.controls['sendText'].setValue(null);
+      this.messageForm.controls[formControlName].setValue(null);
     }
   };
 
   keyDownFunction = (event) => {
-    if (event.keyCode === 13) this.onSubmit();
+    if (event.keyCode === 13) {
+      this.onSubmit();
+    }
   };
 
   ngOnInit(): void {

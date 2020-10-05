@@ -1,6 +1,10 @@
 <div class="image__card" *ngIf="images">
   <div class="wrap_carousel">
-    <ng-simple-carousel-with-dots [images]="images" [controller]="controller">
+    <ng-simple-carousel-with-dots
+      [images]="images"
+      [controller]="controller"
+      [objectFit]="cover"
+    >
     </ng-simple-carousel-with-dots>
   </div>
 </div>
