@@ -17,8 +17,11 @@
       [userFrom]="message.userFrom"
       [class]="setStyleByUserFrom(message.userFrom)"
     >
-      <div content>
+      <div content *ngIf="message.type === 1">
         {{ message.content.text }}
+      </div>
+      <div content *ngIf="message.type === 5">
+        <omb-image-card [images]="message.content"></omb-image-card>
       </div>
     </omb-message>
   </section>

@@ -1,0 +1,8 @@
+@import "../styles/sass-helpers.scss";
+
+.wrap_carousel {
+  margin: auto;
+  // image aspect ratio is 3 : 2
+  width: 80%;
+  height: calc((40vw - 10px) * 0.8 / 3 * 2);
+}

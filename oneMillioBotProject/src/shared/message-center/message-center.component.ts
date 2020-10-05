@@ -2,7 +2,9 @@ import {
   AfterViewChecked,
   Component,
   ElementRef,
+  OnChanges,
   OnInit,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 
@@ -14,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { MESSAGE_FROM } from 'src/app/enums/messageFromType.enum';
 import { MESSAGE_TYPE } from 'src/app/enums/messageType.enum';
+import { ICarouselImage } from 'src/app/models/carousel-image.model';
 import { IMessage } from 'src/app/models/message.model';
 
 @Component({
@@ -28,6 +31,7 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
   public footerText = 'by 1millionbot';
   public botName = 'Bill';
   public messages = new Array<IMessage<any>>();
+  public images = new Array<ICarouselImage>();
 
   @ViewChild('scrollMe') private bodyScroll: ElementRef;
 
@@ -47,14 +51,22 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
   };
 
   ngOnInit(): void {
+    this.images = [
+      {
+        id: 'australian',
+        src: 'https://picsum.photos/id/237/200/300',
+      },
+      { id: 'dachshund', src: 'https://picsum.photos/200/300?grayscale' },
+      { id: 'shiba', src: 'https://picsum.photos/seed/picsum/200/300' },
+    ];
     this.messages = [
       {
         userFrom: MESSAGE_FROM.BOT,
         type: MESSAGE_TYPE.TEXT,
         content: {
           text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-        fugiat architecto dignissimos sed iusto praesentium harum quis
-        voluptatum beatae, debitis assumenda, similique repellat quasi.`,
+          fugiat architecto dignissimos sed iusto praesentium harum quis
+          voluptatum beatae, debitis assumenda, similique repellat quasi.`,
         },
       },
       {
@@ -78,8 +90,19 @@ export class MessageCenterComponent implements OnInit, AfterViewChecked {
           text: `Lorem ipsum dolor, sit amet consectetur`,
         },
       },
+      {
+        userFrom: MESSAGE_FROM.USER,
+        type: MESSAGE_TYPE.PICTURE,
+        content: [
+          {
+            id: 'australian',
+            src: 'https://picsum.photos/id/237/200/300',
+          },
+          { id: 'dachshund', src: 'https://picsum.photos/200/300?grayscale' },
+          { id: 'shiba', src: 'https://picsum.photos/seed/picsum/200/300' },
+        ],
+      },
     ];
-    this.scrollToBottom();
   }
 
   ngAfterViewChecked(): void {
